@@ -6,10 +6,10 @@
   "scripts": {
     "init:gh-pages": "git clone --single-branch --branch gh-pages https://github.com/cv-severnyuk-aleksey/human-resource-app.git public",
     "clean:gh-pages": "rm -rf public/*",
-    "deploy": "webpack && cp -R dist/. public/",
-    "build": "webpack",
+    "deploy": "webpack --config webpack.prod.js && cp -R dist/. public/",
+    "build": "webpack --config webpack.prod.js",
     "watch": "webpack --watch",
-    "start": "webpack serve",
+    "start": "webpack serve --config webpack.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "proxy": "http://localhost:3001",
@@ -32,6 +32,7 @@
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "css-loader": "^5.2.6",
     "cssnano": "^5.0.6",
+    "dotenv": "^10.0.0",
     "mini-css-extract-plugin": "^1.6.0",
     "node-sass": "^6.0.0",
     "optimize-css-assets-webpack-plugin": "^6.0.0",
@@ -41,6 +42,7 @@
     "style-loader": "^2.0.0",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.8.0"
   }
 }

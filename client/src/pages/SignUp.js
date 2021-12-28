@@ -16,7 +16,7 @@ class SignUp extends Component {
   login = () => {
     const { email, password, reload } = this.state;
 
-    fetch('https://sdhnik-human-resource-app.herokuapp.com/api/login', {
+    fetch(`${process.env.API}api/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ class SignUp extends Component {
     if (password !== confirm) {
       Alert.show('danger', 'The passwords specified must be identical');
     } else {
-      fetch('https://sdhnik-human-resource-app.herokuapp.com/api/user', {
+      fetch(`${process.env.API}api/user`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

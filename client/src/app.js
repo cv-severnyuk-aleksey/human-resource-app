@@ -17,7 +17,7 @@ class HRApp extends Component {
     if (sessionStorage.token) {
       headers = { 'Authorization': sessionStorage.token }
     }
-    fetch("https://sdhnik-human-resource-app.herokuapp.com/api/echo", { headers: headers })
+    fetch(`${process.env.API}api/echo`, { headers: headers })
       .then(res => res.json())
       .then(data => {
         if (data.success) {
@@ -34,7 +34,7 @@ class HRApp extends Component {
     if (sessionStorage.token) {
       headers = { 'Authorization': sessionStorage.token }
     }
-    fetch("https://sdhnik-human-resource-app.herokuapp.com/api/echo", { headers: headers })
+    fetch(`${process.env.API}api/echo`, { headers: headers })
       .then(res => res.json())
       .then(data => {
         if (data.success) {

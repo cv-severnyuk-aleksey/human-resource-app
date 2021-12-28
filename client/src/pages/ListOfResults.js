@@ -19,7 +19,7 @@ class ListOfResults extends Component {
 
   componentDidMount() {
     const self = this;
-    fetch('https://sdhnik-human-resource-app.herokuapp.com/api/qa', {
+    fetch(`${process.env.API}api/qa`, {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': sessionStorage.token,
@@ -30,7 +30,7 @@ class ListOfResults extends Component {
         self.setState({questions: data.data})
       });
 
-    fetch('https://sdhnik-human-resource-app.herokuapp.com/api/results', {
+    fetch(`${process.env.API}api/results`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
