@@ -20,7 +20,7 @@ class Test extends Component {
 
   componentDidMount() {
     const self = this;
-    fetch('/api/qa', {
+    fetch('https://sdhnik-human-resource-app.herokuapp.com/api/qa', {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': sessionStorage.token,

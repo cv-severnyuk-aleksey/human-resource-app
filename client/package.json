@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "init:gh-pages": "git clone --single-branch --branch gh-pages https://github.com/cv-severnyuk-aleksey/human-resource-app.git public",
+    "clean:gh-pages": "rm -rf public/*",
+    "deploy": "webpack && cp -R dist/. public/",
     "build": "webpack",
     "watch": "webpack --watch",
     "start": "webpack serve",

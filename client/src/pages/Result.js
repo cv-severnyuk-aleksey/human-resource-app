@@ -41,7 +41,7 @@ class Result extends Component {
   save = () => {
     const { user, procent, badResult, reload } = this.state;
 
-    fetch('/api/result', {
+    fetch('https://sdhnik-human-resource-app.herokuapp.com/api/result', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

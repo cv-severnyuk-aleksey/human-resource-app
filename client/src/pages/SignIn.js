@@ -16,7 +16,7 @@ class SignIn extends Component {
     const { email, password, reload } = this.state;
     e.preventDefault();
 
-    fetch('/api/login', {
+    fetch('https://sdhnik-human-resource-app.herokuapp.com/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
