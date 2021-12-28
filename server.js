@@ -8,7 +8,10 @@ const cors = require("cors");
 const app = express();
 
 const accessTokenSecret = 'youraccesstokensecret';
-const HTTP_PORT = 3001; 
+let HTTP_PORT = process.env.PORT;
+if (HTTP_PORT == null || HTTP_PORT == "") {
+  HTTP_PORT = 3001;
+}
 
 const authenticateJWT = (req, res, next) => {
   const authHeader = req.headers.authorization;
